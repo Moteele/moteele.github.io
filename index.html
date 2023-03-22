@@ -1,10 +1,25 @@
-<div>
-    <img src="poster_cz.jpg" class="marginauto">
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+	var poster = document.getElementById("poster");
+	poster.addEventListener("click", function() {
+	    poster.style.width = "100%";
+	});
+    </script>
+</head>
+<body>
+    <div>
+	<img id='poster' src="poster_cz.jpg" class="marginauto">
+    </div>
 
-<style>
-.marginauto {
-    margin: 10px auto 20px;
-    display: block;
-}
-</style>
+    <style>
+    .marginauto {
+	margin: 10px auto 20px;
+	display: block;
+	max-width:800px;
+    }
+    </style>
+</body>
+
+
