@@ -1,18 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script>
-	var poster = document.getElementById("poster");
-	poster.addEventListener("click", function() {
-	    poster.style.width = "100%";
-	});
-    </script>
-</head>
-<body>
-    <div>
-	<img id='poster' src="poster_cz.jpg" class="marginauto">
-    </div>
-
     <style>
     .marginauto {
 	margin: 10px auto 20px;
@@ -20,6 +8,26 @@
 	max-width:800px;
     }
     </style>
+</head>
+<body>
+    <div>
+	<img id='poster' src="poster_cz.jpg" class="marginauto" style="cursor:zoom-in;">
+    </div>
+
+    <script>
+	var poster = document.getElementById("poster");
+	poster.addEventListener("click", function() {
+	    if(poster.style.width == "100%") {
+		poster.style.maxWidth = "800px";
+		poster.style.width = "auto";
+		poster.style.cursor = "zoom-in";
+	    } else {
+		poster.style.maxWidth = "100%";
+		poster.style.width = "100%";
+		poster.style.cursor = "zoom-out";
+	    }
+	});
+    </script>
 </body>
 
 
