@@ -17,6 +17,8 @@
             font-family: Arial, sans-serif;
             color: #000;
             background-color: #fff;
+	    max-width:800px;
+	    margin: 0 auto;
         }
         h1 {
             text-align: center;
@@ -116,6 +118,18 @@ header {
 .menu a:hover {
     color: #666;
 }
+.scrollToTop {
+    font-size: 16px;
+    border: none;
+    background: none;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.scrollToTop:hover {
+    color: #666;
+}
     </style>
 </head>
 <body>
@@ -125,15 +139,17 @@ header {
 		<li><a href="#about">O festivalu</a></li>
 		<li><a href="#program">Program</a></li>
 		<li><a href="#performers">Účinkující</a></li>
+		<li><a href="https://www.facebook.com/events/703888861736810"> FB
+			událost</a></li>
 		<li><a href="https://koridorua.cz/">KoridorUA</a></li>
 		<li><a href="ua.html">Українська</a></li>
+		<li><button id="scrollToTop" class="scrollToTop">↑↑↑</button></li> <!-- Add this line for the arrow up button -->
+
 	    </ul>
 	</nav>
     </header>
-    <section id="about">
     <div>
 	<img id='poster' src="poster_cz.jpg" class="marginauto" style="cursor:zoom-in;">
-	<a href="ua.html">Українська</a>
     </div>
 
     <script>
@@ -149,11 +165,19 @@ header {
 		poster.style.cursor = "zoom-out";
 	    }
 	});
+	document.getElementById("scrollToTop").addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});
     </script>
-
-    <div style="text-align: center;">
-    <a href="https://www.facebook.com/events/703888861736810" target="_blank"
-	class="facebook-btn">Facebooková událost</a>
+    <div>
+    <section id="about">
+    <p>S klidem k lidem! 💙💛</p>
+    <p>Ukrajinský Užhorod coby křižovatka kultury i kultur 🎭🎼🤝</p>
+    <p>Čtvrtý dubnový víkend (21. – 23. 4.) se historické město u hranic se Slovenskem stane centrem Mezinárodního festivalu svobody ✌🏻</p>
+    <p>První ročník chystané hudebně-divadelní přehlídky má dva hlavní cíle. Propojit české a ukrajinské umělce i diváky a lidem zasaženým válkou dát alespoň na chvíli možnost zapomenout na útrapy s konfliktem spojené tím, že se ocitnou ve světě pohádek, poezie, dramatu a fantazie.</p>
+    <p>Festival pořádá humanitární organizace Koridor UA ve spojení s Divadlem Láska, a to za laskavého přispění Města Užhorodu, starosty města Bohdana Andriiva, Zakarpatské oblasti a předsedy Zakarpatské regionální rady Volodymrya Čubirka.</p>
+    <p>Nezisková organizace Koridor UA projektem navazuje na svou předchozí́ aktivitu směřující k podpoře kulturního života ve válkou zkoušené zemi.</p>
+    <p>Z Česka se za ukrajinskými diváky vydá na 6 divadelních souborů a 9 kapel či hudebníků. O vystoupení v ukrajinském jazyce se postará 5 tamních scén, mezi kterými bude i soubor mariupolského divadla, jež se stalo symbolem ruských válečných zločinů na Ukrajině.</p>
     </div>
     </section>
 
