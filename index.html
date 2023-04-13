@@ -32,28 +32,34 @@
             margin-bottom: 1rem;
             margin-top: 2rem;
         }
-        table {
-	    max-width: 800px;
-	    width: 100%;
-	    border-collapse: collapse;
-	    margin-left: auto;
-	    margin-right: auto;
-        }
-        th, td {
-            border: 1px solid #0057b8;
-            padding: 8px;
-            text-align: left;
-            vertical-align: top;
-        }
-        th {
-            background-color: #ffd700;
-            color: #0057b8;
-            font-weight: bold;
-        }
-        td {
-            background-color: #fff;
-        }
-        .location {
+	table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 16px;
+    color: #333;
+}
+
+table th, table td {
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    text-align: left;
+}
+
+table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
+table tr:hover {
+    background-color: #e6e6e6;
+}
+                .location {
             font-size: 0.9rem;
             font-style: italic;
             margin-top: 1.5rem;
