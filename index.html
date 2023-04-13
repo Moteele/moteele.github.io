@@ -79,9 +79,58 @@ table tr:hover {
     .facebook-btn:hover {
         background-color: #145CB2;
     }
+    /* Menu */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+    position: sticky; /* Add this line */
+    top: 0; /* Add this line */
+    z-index: 100; /* Add this line to ensure the header stays on top of other elements */
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu li {
+    margin: 0 20px;
+}
+
+.menu a {
+    font-size: 16px;
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #666;
+}
     </style>
 </head>
 <body>
+    <header>
+	<nav class="menu">
+	    <ul>
+		<li><a href="#about">O festivalu</a></li>
+		<li><a href="#program">Program</a></li>
+		<li><a href="#performers">Účinkující</a></li>
+		<li><a href="https://koridorua.cz/">KoridorUA</a></li>
+		<li><a href="ua.html">Українська</a></li>
+	    </ul>
+	</nav>
+    </header>
+    <section id="about">
     <div>
 	<img id='poster' src="poster_cz.jpg" class="marginauto" style="cursor:zoom-in;">
 	<a href="ua.html">Українська</a>
@@ -106,7 +155,9 @@ table tr:hover {
     <a href="https://www.facebook.com/events/703888861736810" target="_blank"
 	class="facebook-btn">Facebooková událost</a>
     </div>
+    </section>
 
+    <section id=program>
     <div>
 	<h1>Program</h1>
     <h2>✨ PÁTEK ✨</h2>
@@ -317,6 +368,13 @@ table tr:hover {
     <p class="location">📍Venkovní scéna: Stage na náměstí před Zakarpatským akademickým regionálním loutkovým divadlem</p>
     <p>Každý večer na Vás čeká lasershow na venkovní scéně a videomapping na budovu Loutkového divadla.</p>
     </div>
+</section>
+<section id="performers">
+    <h1>Vystupující</h1>
+    <div>
+    <p>Medailonky připravujeme</p>
+    </div>
+</section>
 </body>
 </html>
 
