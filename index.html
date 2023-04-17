@@ -1,410 +1,646 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Festival Svobody</title>
-    <link rel="icon" type="image/x-icon" href="favicon.png">
-    <style>
-    .marginauto {
-	margin: 10px auto 20px;
-	display: block;
-	max-width:800px;
-    }
-    .centered {
-    text-align: center;
-    }
-    div {text-align: center;}
-    body {
-            font-family: Arial, sans-serif;
-            color: #000;
-            background-color: #fff;
+    <head>
+	<title>Festival Svobody</title>
+	<link rel="icon" type="image/x-icon" href="favicon.png">
+	<script src="https://kit.fontawesome.com/f72108d5f2.js" crossorigin="anonymous"></script>
+
+	<style>
+.performer-container {
+    display: flex;
+    margin-bottom: 50px;
+    justify-content: center;
+}
+	.performer-description {
+	    flex-grow: 1;
+	    padding-left:40px;
+	    padding-top:40px;
+	}
+	.performer-description p {
+	    text-align: justify;
+	}
+	.column-wrapper {
+	    display:flex;
+	    align-items:center;
+	    justify-content: center;
+	}
+	.image-container {
+	    width: 300px;
+	    text-align: center;
+	    margin-left: 20px;
+	}
+
+	.performer-image {
+	    width: 200px;
+	    height: 200px;
+	    object-fit: cover;
+	    border-radius: 50%;
+	}
+
+	.social-icons {
+	    display: flex;
+	    gap: 10px;
+	    justify-content: center;
+	    padding-top: 10px;
+	}
+	.social-icon {
+	    background-color: white;
+	    border-radius: 50%;
+	    padding: 5px;
+	    display: flex;
+	    justify-content: center;
+	    width: 30px;
+	    height: 30px;
+	    font-size:2em;
+	}
+	.social-icon a {
+	    color: black;
+	    text-decoration: none;
+	} 
+	.social-icon a:hover i {
+	    color: #0077cc;
+	}
+	.marginauto {
+	    margin: 10px auto 20px;
+	    display: block;
+	    max-width:800px;
+	}
+	.centered {
+	    text-align: center;
+	}
+	body {
+	    font-family: Arial, sans-serif;
+	    color: #000;
+	    background-color: #fff;
 	    max-width:800px;
 	    margin: 0 auto;
-        }
-        h1 {
-            text-align: center;
-            font-size: 2rem;
-            color: #0057b8;
-            border-bottom: 2px solid #ffd700;
-            padding-bottom: 10px;
-            margin-bottom: 1.5rem;
-        }
-        h2 {
-            font-size: 1.5rem;
-            color: #0057b8;
-            margin-bottom: 1rem;
-            margin-top: 2rem;
-        }
+	}
+	h1 {
+	    text-align: center;
+	    font-size: 2rem;
+	    color: #0057b8;
+	    border-bottom: 2px solid #ffd700;
+	    padding-bottom: 10px;
+	    margin-bottom: 1.5rem;
+	}
+	h2 {
+	    font-size: 1.5rem;
+	    color: #0057b8;
+	    margin-bottom: 1rem;
+	    margin-top: 2rem;
+	}
 	table {
-    border-collapse: collapse;
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    font-size: 16px;
-    color: #333;
-}
+	    border-collapse: collapse;
+	    width: 100%;
+	    max-width: 800px;
+	    margin: 0 auto;
+	    font-size: 16px;
+	    color: #333;
+	}
 
-table th, table td {
-    border: 1px solid #ccc;
-    padding: 10px 20px;
-    text-align: left;
-}
+	table th, table td {
+	    border: 1px solid #ccc;
+	    padding: 10px 20px;
+	    text-align: left;
+	}
 
-table th {
-    background-color: #f2f2f2;
-    font-weight: bold;
-}
+	table th {
+	    background-color: #f2f2f2;
+	    font-weight: bold;
+	}
 
-table tr:nth-child(even) {
-    background-color: #f8f8f8;
-}
+	table tr:nth-child(even) {
+	    background-color: #f8f8f8;
+	}
 
-table tr:hover {
-    background-color: #e6e6e6;
-}
-                .location {
-            font-size: 0.9rem;
-            font-style: italic;
-            margin-top: 1.5rem;
-        }
-	    .facebook-btn {
-        display: inline-block;
-        background-color: #1877F2;
-        color: #fff;
-        text-decoration: none;
-        font-size: 1rem;
-        padding: 10px 20px;
-        border-radius: 5px;
-        margin: 20px auto;
-        transition: background-color 0.3s ease;
-    }
+	table tr:hover {
+	    background-color: #e6e6e6;
+	}
+	.location {
+	    font-size: 0.9rem;
+	    font-style: italic;
+	    margin-top: 1.5rem;
+	}
 
-    .facebook-btn:hover {
-        background-color: #145CB2;
-    }
-    /* Menu */
-header {
-    background-color: #fff;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
-    position: sticky; /* Add this line */
-    top: 0; /* Add this line */
-    z-index: 100; /* Add this line to ensure the header stays on top of other elements */
-}
+	/* Menu */
+	header {
+	    background-color: #fff;
+	    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+	    position: sticky; /* Add this line */
+	    top: 0; /* Add this line */
+	    z-index: 100; /* Add this line to ensure the header stays on top of other elements */
+	}
 
-.menu {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
+	.menu {
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	    padding: 20px;
+	}
 
-.menu ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
+	.menu ul {
+	    list-style-type: none;
+	    margin: 0;
+	    padding: 0;
+	    display: flex;
+	}
 
-.menu li {
-    margin: 0 20px;
-}
+	.menu li {
+	    margin: 0 20px;
+	}
 
-.menu a {
-    font-size: 16px;
-    text-decoration: none;
-    color: #333;
-    transition: color 0.3s;
-}
+	.menu a {
+	    font-size: 16px;
+	    text-decoration: none;
+	    color: #333;
+	    transition: color 0.3s;
+	}
 
-.menu a:hover {
-    color: #666;
-}
-.scrollToTop {
-    font-size: 16px;
-    border: none;
-    background: none;
-    color: #333;
-    cursor: pointer;
-    transition: color 0.3s;
-}
+	.menu a:hover {
+	    color: #666;
+	}
+	.scrollToTop {
+	    font-size: 16px;
+	    border: none;
+	    background: none;
+	    color: #333;
+	    cursor: pointer;
+	    transition: color 0.3s;
+	}
 
-.scrollToTop:hover {
-    color: #666;
-}
-    </style>
-</head>
-<body>
-    <header>
-	<nav class="menu">
-	    <ul>
-		<li><a href="#about">O festivalu</a></li>
-		<li><a href="#program">Program</a></li>
-		<li><a href="#performers">Účinkující</a></li>
-		<li><a href="https://www.facebook.com/events/703888861736810"> FB
-			událost</a></li>
-		<li><a href="https://koridorua.cz/">KoridorUA</a></li>
-		<li><a href="ua.html">Українська</a></li>
-		<li><button id="scrollToTop" class="scrollToTop">↑↑↑</button></li> <!-- Add this line for the arrow up button -->
+	.scrollToTop:hover {
+	    color: #666;
+	}
+	</style>
+    </head>
+    <body>
+	<header>
+	    <nav class="menu">
+		<ul>
+		    <li><a href="#about">O festivalu</a></li>
+		    <li><a href="#program">Program</a></li>
+		    <li><a href="#performers">Účinkující</a></li>
+		    <li><a href="https://www.facebook.com/events/703888861736810"> FB
+			    událost</a></li>
+		    <li><a href="https://koridorua.cz/">KoridorUA</a></li>
+		    <li><a href="ua.html">Українська</a></li>
+		    <li><button id="scrollToTop" class="scrollToTop">↑↑↑</button></li> <!-- Add this line for the arrow up button -->
 
-	    </ul>
-	</nav>
-    </header>
-    <div>
-	<img id='poster' src="poster_cz.jpg" class="marginauto" style="cursor:zoom-in;">
-    </div>
+		</ul>
+	    </nav>
+	</header>
+	<div>
+	    <img id='poster' src="poster_cz.jpg" class="marginauto" style="cursor:zoom-in;">
+	</div>
 
-    <script>
-	var poster = document.getElementById("poster");
-	poster.addEventListener("click", function() {
-	    if(poster.style.width == "100%") {
-		poster.style.maxWidth = "800px";
-		poster.style.width = "auto";
-		poster.style.cursor = "zoom-in";
-	    } else {
-		poster.style.maxWidth = "100%";
-		poster.style.width = "100%";
-		poster.style.cursor = "zoom-out";
-	    }
-	});
-	document.getElementById("scrollToTop").addEventListener("click", function () {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-});
-    </script>
-    <div style="text-align:justify">
-    <section id="about">
-    <p style="text-align:center">S klidem k lidem! 💙💛</p>
-    <p>Ukrajinský Užhorod coby křižovatka kultury i kultur 🎭🎼🤝</p>
-    <p>Čtvrtý dubnový víkend (21. – 23. 4.) se historické město u hranic se Slovenskem stane centrem Mezinárodního festivalu svobody ✌🏻</p>
-    <p>První ročník chystané hudebně-divadelní přehlídky má dva hlavní cíle. Propojit české a ukrajinské umělce i diváky a lidem zasaženým válkou dát alespoň na chvíli možnost zapomenout na útrapy s konfliktem spojené tím, že se ocitnou ve světě pohádek, poezie, dramatu a fantazie.</p>
-    <p>Festival pořádá humanitární organizace Koridor UA ve spojení s Divadlem Láska, a to za laskavého přispění Města Užhorodu, Zakarpatské oblasti a předsedy Zakarpatské regionální rady Volodymrya Čubirka.</p>
-    <p>Nezisková organizace Koridor UA projektem navazuje na svou předchozí́ aktivitu směřující k podpoře kulturního života ve válkou zkoušené zemi.</p>
-    <p>Z Česka se za ukrajinskými diváky vydá na 6 divadelních souborů a 9 kapel či hudebníků. O vystoupení v ukrajinském jazyce se postará 5 tamních scén, mezi kterými bude i soubor mariupolského divadla, jež se stalo symbolem ruských válečných zločinů na Ukrajině.</p>
-    </div>
-    </section>
+	<script>
+	    var poster = document.getElementById("poster");
+	    poster.addEventListener("click", function() {
+		if(poster.style.width == "100%") {
+		    poster.style.maxWidth = "800px";
+		    poster.style.width = "auto";
+		    poster.style.cursor = "zoom-in";
+		} else {
+		    poster.style.maxWidth = "100%";
+		    poster.style.width = "100%";
+		    poster.style.cursor = "zoom-out";
+		}
+	    });
+	    document.getElementById("scrollToTop").addEventListener("click", function () {
+		window.scrollTo({ top: 0, behavior: "smooth" });
+	    });
+	</script>
+	<div style="text-align:justify">
+	    <section id="about">
+		<p style="text-align:center">S klidem k lidem! 💙💛</p>
+		<p>Ukrajinský Užhorod coby křižovatka kultury i kultur 🎭🎼🤝</p>
+		<p>Čtvrtý dubnový víkend (21. – 23. 4.) se historické město u hranic se Slovenskem stane centrem Mezinárodního festivalu svobody ✌🏻</p>
+		<p>První ročník chystané hudebně-divadelní přehlídky má dva hlavní cíle. Propojit české a ukrajinské umělce i diváky a lidem zasaženým válkou dát alespoň na chvíli možnost zapomenout na útrapy s konfliktem spojené tím, že se ocitnou ve světě pohádek, poezie, dramatu a fantazie.</p>
+		<p>Festival pořádá humanitární organizace Koridor UA ve spojení s Divadlem Láska, a to za laskavého přispění Města Užhorodu, Zakarpatské oblasti a předsedy Zakarpatské regionální rady Volodymrya Čubirka.</p>
+		<p>Nezisková organizace Koridor UA projektem navazuje na svou předchozí́ aktivitu směřující k podpoře kulturního života ve válkou zkoušené zemi.</p>
+		<p>Z Česka se za ukrajinskými diváky vydá na 6 divadelních souborů a 9 kapel či hudebníků. O vystoupení v ukrajinském jazyce se postará 5 tamních scén, mezi kterými bude i soubor mariupolského divadla, jež se stalo symbolem ruských válečných zločinů na Ukrajině.</p>
+	</div>
+	    </section>
 
-    <section id=program>
-    <h1>Program</h1>
-    <h2>✨ PÁTEK ✨</h2>
-    <div class="centered">
-    <table>
-	<thead>
-            <tr>
-                <th>Čas</th>
-                <th>Událost</th>
-                <th>Místo</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>12:00 - 14:00</td>
-                <td>Ivano-Frankivské Nové divadlo: Hamlet a Julie (UA)</td>
-                <td>Velká scéna</td>
-            </tr>
-            <tr>
-                <td>14:30 - 15:30</td>
-                <td>Teď, nádech a leť: A lidé žijí. Abdul (CZ)</td>
-                <td>Velká scéna</td>
-            </tr>
-            <tr>
-                <td>15:30 - 16:30</td>
-                <td>Diskuze k představení</td>
-                <td>Velká scéna</td>
-            </tr>
-            <tr>
-                <td>18:00 - 20:30</td>
-                <td>Ivano-Frankivské národní činoherní divadlo: Sladká Darusia (UA)</td>
-                <td>Velká scéna</td>
-            </tr>
-            <tr>
-                <td>12:15 - 14:15</td>
-                <td>Cimbálová muzika Hora (CZ)</td>
-                <td>Venkovní scéna</td>
-            </tr>
-            <tr>
-                <td>15:00 - 16:10</td>
-                <td>Ivano-Frankivsk Trio (UA/CZ)</td>
-                <td>Venkovní scéna</td>
-            </tr>
-            <tr>
-                <td>16:40 - 17:40</td>
-                <td>Martin Binder (CZ)</td>
-                <td>Venkovní scéna</td>
-            </tr>
-            <tr>
-                <td>18:40 - 20:00</td>
-                <td>Andrea Dare (CZ)</td>
-                <td>Venkovní scéna</td>
-            </tr>
-            <tr>
-                <td>21:05 - 22:00</td>
-                <td>Isama Zing (SK)</td>
-                <td>Venkovní scéna</td>
-            </tr>
-            <tr>
-                <td>13:00 - 14:00</td>
-                <td>Divadlo Láska: Kolobok, Koza Děreza, Telesik (CZ)</td>
-                <td>Malá scéna</td>
-            </tr>
-        </tbody>
-    </table>
-    </div>
-    <h2>✨ SOBOTA ✨</h2>
-    <div class="centered">
-	<table>
-	<thead>
-            <tr>
-                <th>Čas</th>
-                <th>Událost</th>
-                <th>Místo</th>
-            </tr>
-        </thead>
-	<tbody>
-            <!-- SOBOTA -->
-            <tr>
-                <td>12:00 - 13:00</td>
-                <td>Teď, nádech a leť: Přicházejí. Co chtějí? Co chceme? (CZ)</td>
-                <td>Velká scéna</td>
-            </tr>
-            <tr>
-                <td>13:00 - 14:00</td>
-                <td>Diskuse k představení</td>
-                <td>Velká scéna</td>
-            </tr>
-            <tr>
-                <td>18:00 - 19:00</td>
-                <td>Mariupolské akademické divadlo: Křik národa (UA)</td>
-                <td>Velká scéna</td>
-            </tr>
-            <tr>
-                <td>12:15 - 13:30</td>
-                <td>Cimbálová muzika Hora (CZ)</td>
-                <td>Venkovní scéna</td>
-            </tr>
-            <tr>
-                <td>14:00 - 15:30</td>
-                <td>Snediggen Snurssla (CZ)</td>
-                <td>Venkovní scéna</td>
-            </tr>
-            <tr>
-                <td>16:30 - 17:10</td>
-                <td>Natálie Pleváková (CZ)</td>
-                <td>Venkovní scéna</td>
-            </tr>
-            <tr>
-                <td>18:10 - 19:10</td>
-                <td>Thistle (CZ/FIN)</td>
-                <td>Venkovní scéna</td>
-            </tr>
-            <tr>
-                <td>20:10 - 22:00</td>
-                <td>Brigitte Noir (CZ)</td>
-                <td>Venkovní scéna</td>
-            </tr>
-            <tr>
-                <td>11:00 - 12:00</td>
-                <td>Zakarpatské akademické regionální loutkové divadlo: Dobrodružství Kozhyka a Letyka (UA)</td>
-                <td>Malá scéna</td>
-            </tr>
-            <tr>
-                <td>13:30 - 14:30</td>
-                <td>Divadlo Láska: Kolobok, Koza Děreza, Telesik (CZ)</td>
-                <td>Malá scéna</td>
-            </tr>
-            <tr>
-                <td>16:00 - 17:30</td>
-                <td>Bazmek Entertainment: Uran 235 (CZ)</td>
-                <td>Malá scéna</td>
-            </tr>
-            <tr>
-                <td>20:00 - 21:00</td>
-                <td>Divadlo Láska: Tady žijí lidé (UA/CZ)</td>
-                <td>Malá scéna</td>
-            </tr>
-	</tbody>
-    </table>
-    </div>
-    <h2>✨ NEDĚLE ✨</h2>
-<div class="centered">
-<table>
-    <thead>
-        <tr>
-            <th>Čas</th>
-            <th>Událost</th>
-            <th>Místo</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>12:00 - 13:30</td>
-            <td>Jan Mocek: Present Perfect (CZ)</td>
-            <td>Velká scéna</td>
-        </tr>
-        <tr>
-            <td>18:00 - 20:00</td>
-            <td>Zakarpatské akademické hudební & činoherní divadlo: Duchové panství Ravenscroftů (UA)</td>
-            <td>Velká scéna</td>
-        </tr>
-        <tr>
-            <td>12:15 - 13:45</td>
-            <td>Illuse (SK)</td>
-            <td>Venkovní scéna</td>
-        </tr>
-        <tr>
-            <td>14:15 - 15:15</td>
-            <td>Loutkové divadlo Dobranič: Odpolední pohádky na dobrou noc (CZ)</td>
-            <td>Venkovní scéna</td>
-        </tr>
-        <tr>
-            <td>16:15 - 18:15</td>
-            <td>Šybajholovy (UA)</td>
-            <td>Venkovní scéna</td>
-        </tr>
-        <tr>
-            <td>18:30 - 20:15</td>
-            <td>Vanbio (UA)</td>
-            <td>Venkovní scéna</td>
-        </tr>
-        <tr>
-            <td>11:00 - 12:00</td>
-            <td>Zakarpatské akademické regionální loutkové divadlo: Zázračný strom (UA)</td>
-            <td>Malá scéna</td>
-        </tr>
-        <tr>
-            <td>13:00 - 14:00</td>
-            <td>Zakarpatské akademické regionální loutkové divadlo: Zázračný strom (UA)</td>
-            <td>Malá scéna</td>
-        </tr>
-        <tr>
-            <td>16:00 - 17:00</td>
-            <td>Teatro Asterlizze: The Labyrinth of dr. Paradise (IT)</td>
-            <td>Malá scéna</td>
-        </tr>
-        <tr>
-            <td>20:30 - 21:30</td>
-            <td>Divadlo Láska: Zde žijí lidé (UA/CZ)</td>
-            <td>Malá scéna</td>
-        </tr>
-    </tbody>
-</table>
-</div>
-    <p class="location">📍Velká scéna: Zakarpatské akademické hudební & činoherní divadlo</p>
-    <p class="location">📍Malá scéna: Zakarpatské akademické regionální loutkové divadlo</p>
-    <p class="location">📍Venkovní scéna: Stage na náměstí před Zakarpatským akademickým regionálním loutkovým divadlem</p>
-    <p>Každý večer na Vás čeká lasershow na venkovní scéně a videomapping na budovu Loutkového divadla.</p>
-    </div>
-</section>
-<section id="performers">
-    <h1>Vystupující</h1>
-    <div>
-    <p>Medailonky připravujeme</p>
-    </div>
-</section>
-</body>
+	    <section id=program>
+		<h1>Program</h1>
+		<h2>✨ PÁTEK ✨</h2>
+		<div class="centered">
+		    <table>
+			<thead>
+			    <tr>
+				<th>Čas</th>
+				<th>Událost</th>
+				<th>Místo</th>
+			    </tr>
+			</thead>
+			<tbody>
+			    <tr>
+				<td>12:00 - 14:00</td>
+				<td>Ivano-Frankivské Nové divadlo: Hamlet a Julie (UA)</td>
+				<td>Velká scéna</td>
+			    </tr>
+			    <tr>
+				<td>14:30 - 15:30</td>
+				<td>Teď, nádech a leť: A lidé žijí. Abdul (CZ)</td>
+				<td>Velká scéna</td>
+			    </tr>
+			    <tr>
+				<td>15:30 - 16:30</td>
+				<td>Diskuze k představení</td>
+				<td>Velká scéna</td>
+			    </tr>
+			    <tr>
+				<td>18:00 - 20:30</td>
+				<td>Ivano-Frankivské národní činoherní divadlo: Sladká Darusia (UA)</td>
+				<td>Velká scéna</td>
+			    </tr>
+			    <tr>
+				<td>12:15 - 14:15</td>
+				<td>Cimbálová muzika Hora (CZ)</td>
+				<td>Venkovní scéna</td>
+			    </tr>
+			    <tr>
+				<td>15:00 - 16:10</td>
+				<td>Ivano-Frankivsk Trio (UA/CZ)</td>
+				<td>Venkovní scéna</td>
+			    </tr>
+			    <tr>
+				<td>16:40 - 17:40</td>
+				<td>Martin Binder (CZ)</td>
+				<td>Venkovní scéna</td>
+			    </tr>
+			    <tr>
+				<td>18:40 - 20:00</td>
+				<td>Andrea Dare (CZ)</td>
+				<td>Venkovní scéna</td>
+			    </tr>
+			    <tr>
+				<td>21:05 - 22:00</td>
+				<td>Isama Zing (SK)</td>
+				<td>Venkovní scéna</td>
+			    </tr>
+			    <tr>
+				<td>13:00 - 14:00</td>
+				<td>Divadlo Láska: Kolobok, Koza Děreza, Telesik (CZ)</td>
+				<td>Malá scéna</td>
+			    </tr>
+			</tbody>
+		    </table>
+		</div>
+		<h2>✨ SOBOTA ✨</h2>
+		<div class="centered">
+		    <table>
+			<thead>
+			    <tr>
+				<th>Čas</th>
+				<th>Událost</th>
+				<th>Místo</th>
+			    </tr>
+			</thead>
+			<tbody>
+			    <!-- SOBOTA -->
+			    <tr>
+				<td>12:00 - 13:00</td>
+				<td>Teď, nádech a leť: Přicházejí. Co chtějí? Co chceme? (CZ)</td>
+				<td>Velká scéna</td>
+			    </tr>
+			    <tr>
+				<td>13:00 - 14:00</td>
+				<td>Diskuse k představení</td>
+				<td>Velká scéna</td>
+			    </tr>
+			    <tr>
+				<td>18:00 - 19:00</td>
+				<td>Mariupolské akademické divadlo: Křik národa (UA)</td>
+				<td>Velká scéna</td>
+			    </tr>
+			    <tr>
+				<td>12:15 - 13:30</td>
+				<td>Cimbálová muzika Hora (CZ)</td>
+				<td>Venkovní scéna</td>
+			    </tr>
+			    <tr>
+				<td>14:00 - 15:30</td>
+				<td>Snediggen Snurssla (CZ)</td>
+				<td>Venkovní scéna</td>
+			    </tr>
+			    <tr>
+				<td>16:30 - 17:10</td>
+				<td>Natálie Pleváková (CZ)</td>
+				<td>Venkovní scéna</td>
+			    </tr>
+			    <tr>
+				<td>18:10 - 19:10</td>
+				<td>Thistle (CZ/FIN)</td>
+				<td>Venkovní scéna</td>
+			    </tr>
+			    <tr>
+				<td>20:10 - 22:00</td>
+				<td>Brigitte Noir (CZ)</td>
+				<td>Venkovní scéna</td>
+			    </tr>
+			    <tr>
+				<td>11:00 - 12:00</td>
+				<td>Zakarpatské akademické regionální loutkové divadlo: Dobrodružství Kozhyka a Letyka (UA)</td>
+				<td>Malá scéna</td>
+			    </tr>
+			    <tr>
+				<td>13:30 - 14:30</td>
+				<td>Divadlo Láska: Kolobok, Koza Děreza, Telesik (CZ)</td>
+				<td>Malá scéna</td>
+			    </tr>
+			    <tr>
+				<td>16:00 - 17:30</td>
+				<td>Bazmek Entertainment: Uran 235 (CZ)</td>
+				<td>Malá scéna</td>
+			    </tr>
+			    <tr>
+				<td>20:00 - 21:00</td>
+				<td>Divadlo Láska: Tady žijí lidé (UA/CZ)</td>
+				<td>Malá scéna</td>
+			    </tr>
+			</tbody>
+		    </table>
+		</div>
+		<h2>✨ NEDĚLE ✨</h2>
+		<div class="centered">
+		    <table>
+			<thead>
+			    <tr>
+				<th>Čas</th>
+				<th>Událost</th>
+				<th>Místo</th>
+			    </tr>
+			</thead>
+			<tbody>
+			    <tr>
+				<td>12:00 - 13:30</td>
+				<td>Jan Mocek: Present Perfect (CZ)</td>
+				<td>Velká scéna</td>
+			    </tr>
+			    <tr>
+				<td>18:00 - 20:00</td>
+				<td>Zakarpatské akademické hudební & činoherní divadlo: Duchové panství Ravenscroftů (UA)</td>
+				<td>Velká scéna</td>
+			    </tr>
+			    <tr>
+				<td>12:15 - 13:45</td>
+				<td>Illuse (SK)</td>
+				<td>Venkovní scéna</td>
+			    </tr>
+			    <tr>
+				<td>14:15 - 15:15</td>
+				<td>Loutkové divadlo Dobranič: Odpolední pohádky na dobrou noc (CZ)</td>
+				<td>Venkovní scéna</td>
+			    </tr>
+			    <tr>
+				<td>16:15 - 18:15</td>
+				<td>Šybajholovy (UA)</td>
+				<td>Venkovní scéna</td>
+			    </tr>
+			    <tr>
+				<td>18:30 - 20:15</td>
+				<td>Vanbio (UA)</td>
+				<td>Venkovní scéna</td>
+			    </tr>
+			    <tr>
+				<td>11:00 - 12:00</td>
+				<td>Zakarpatské akademické regionální loutkové divadlo: Zázračný strom (UA)</td>
+				<td>Malá scéna</td>
+			    </tr>
+			    <tr>
+				<td>13:00 - 14:00</td>
+				<td>Zakarpatské akademické regionální loutkové divadlo: Zázračný strom (UA)</td>
+				<td>Malá scéna</td>
+			    </tr>
+			    <tr>
+				<td>16:00 - 17:00</td>
+				<td>Teatro Asterlizze: The Labyrinth of dr. Paradise (IT)</td>
+				<td>Malá scéna</td>
+			    </tr>
+			    <tr>
+				<td>20:30 - 21:30</td>
+				<td>Divadlo Láska: Zde žijí lidé (UA/CZ)</td>
+				<td>Malá scéna</td>
+			    </tr>
+			</tbody>
+		    </table>
+		</div>
+		<p class="location">📍Velká scéna: Zakarpatské akademické hudební & činoherní divadlo</p>
+		<p class="location">📍Malá scéna: Zakarpatské akademické regionální loutkové divadlo</p>
+		<p class="location">📍Venkovní scéna: Stage na náměstí před Zakarpatským akademickým regionálním loutkovým divadlem</p>
+		<p>Každý večer na Vás čeká lasershow na venkovní scéně a videomapping na budovu Loutkového divadla.</p>
+		</div>
+	    </section>
+	    <section id="performers">
+		<h1>Vystupující</h1>
+		<div class="performer-container">
+		    <div class="column-wrapper">
+			<div class="image-container">
+			    <h2>Divadlo Láska</h2>
+			    <img src="imgs/image1.png" alt="Performer Photo" class="performer-image">
+			    <div class="social-icons">
+				<div class="social-icon">
+				    <a href="https://www.facebook.com/performer" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+				</div>
+				<div class="social-icon">
+				    <a href="https://www.instagram.com/performer" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+				</div>
+			    </div>
+			</div>
+			<div class="performer-description">
+			    <p>Divadlo Láska je nezávislé profesionální divadlo, které vzniklo z potřeby projevit solidaritu s válkou stiženou Ukrajinou nejen divadelními prostředky. Často hostuje mimo domovskou Prahu, např. právě na Ukrajině. Tematicky prostupuje dramaturgii divadla význam fenoménu lásky ve vztahu k sociálně-lidskoprávní, environmentálně-aktivistické a spirituálně-filozofické rovině, nahlížený z feministické perspektivy.</p>
+			    <p>Inscenace Zde žijí lidé tematizuje exploitaci a objektivizaci žen-uprchlic – a to i v prostředí divadla. Vznikla spoluprací Divadla Láska s osmi ukrajinskými herečkami žijícími v ČR a třemi současnými ukrajinskými autorkami a autory. Inscenace bude mít na Festivalu svobody premiéru.</p>
+			    <p>Pohádkový triptych tradičních ukrajinských pohádek Kolobok, Koza Děreza, Telesik je inscenace složená ze tří tradičních ukrajinských pohádek. Inscenace se hraje v ukrajinštině a vznikla za účelem výjezdu do ukrajinských dětských domovů v zakarpatské oblasti. Přezkoušeno s ukrajinskými herečkami speciálně pro Festival svobody.</p>
+			</div>
+		    </div>
+		</div>
+
+		<div class="performer-container">
+		    <div class="column-wrapper">
+			<div class="image-container">
+			    <h2>Teatro Asterlizze</h2>
+			    <img src="imgs/image3.png" alt="Performer Photo" class="performer-image">
+			    <div class="social-icons">
+				<div class="social-icon">
+				    <a href="https://www.facebook.com/AsterlizzeProduzioni" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+				</div>
+				<div class="social-icon">
+				    <a href="https://www.instagram.com/asterlizze/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+				</div>
+			    </div>
+			</div>
+			<div class="performer-description">
+			    <p>Teatro Asterlizze z Turína se věnuje tématům paměti a identity prostřednictvím autobiografických příběhů a archivních svědectví. Inscenuje příběhy, vzpomínky, dopisy a deníky, které nás nutí přemýšlet o světě, v němž žijeme, a o naší současnosti. Zapojuje různé profesionály ze světa umění a kultury, kteří na základě studia těchto zdrojů vytvářejí originální umělecké výpovědi, interaktivní zážitky a divadelní představení.</p>
+			    <p>Inscenace The Labyrinth of Dr. Paradise ukazuje příběh vědce pracujícího na eticky problematickém „čistém mase“ pěstovaném ze zvířecích buněk. Jaký je rozdíl mezi člověkem a zvířetem? Proč bylo mimo-lidským druhům dovoleno žít v Zahradě Eden, ale člověk byl z Ráje vyhnán? Můžeme se někdy vrátit zpět?</p>
+			</div>
+		    </div>
+		</div>
+
+		<div class="performer-container">
+		    <div class="column-wrapper">
+			<div class="image-container">
+			    <h2>Jan Mocek</h2>
+			    <img src="imgs/image4.png" alt="Performer Photo" class="performer-image">
+			    <div class="social-icons">
+				<div class="social-icon">
+				    <a href="https://www.facebook.com/mocek.jan" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+				</div>
+				<div class="social-icon">
+				    <a href="https://www.instagram.com/mocekjan/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+				</div>
+			    </div>
+			</div>
+			<div class="performer-description">
+			    <p>Jan Mocek je divadelník a výtvarník žijící v Praze. Ve svých představeních mísí prvky popkultury, politiky a osobní zkušenosti, aby vypovídal o době, ve které žijeme. Zároveň svým divákům nabízí emocionální, atmosférický a silně smyslový zážitek. Jeho inscenace se hrály na mnoha festivalech včetně Fast Forward Dresden, Use the City Košice, Submerge Digital Arts festival Bristol nebo 4+4 Days in Motion Praha.</p>
+			    <p>Inscenace Present: Perfect otevírá otázku symbolické role hrdinů a monumentů v historii a zkoumá proměnu kulturně-politické interpretace naší historie v průběhu doby. Lze naše vzpomínky a s nimi spojený názor vymazat stržením monumentu?</p>
+			</div>
+		    </div>
+		</div>
+
+		<div class="performer-container">
+		    <div class="column-wrapper">
+			<div class="image-container">
+			    <h2>Teď, nádech a leť</h2>
+			    <img src="imgs/image5.png" alt="Performer Photo" class="performer-image">
+			    <div class="social-icons">
+				<div class="social-icon">
+				    <a href="https://www.facebook.com/people/Te%C4%8F-n%C3%A1dech-a-le%C5%A5/100048174624910/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+				</div>
+				<div class="social-icon">
+				    <a href="https://www.instagram.com/explore/tags/tednadechalet/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+				</div>
+			    </div>
+			</div>
+			<div class="performer-description">
+			    <p>Inspirací pro práci souboru jsou cesty a setkávání s lidmi - s jejich životy, příběhy, zvyky, vírami, písněmi. Dramaturgie inscenací je rozpjatá mezi aktuální politická témata současnosti a tradiční kulturu jako živou, nutnou a nenahraditelnou součást života. Výpravy divadla, dříve směřované do míst odlehlých, na periferie kultur a světů, se v poslední době stáčejí do míst blízkých konfliktům a otřesům nejrůznějšího druhu.</p>
+			    <p>Inscenace A lidé žijí. Abdul je divadelní svědectví o boji o přežití, ve kterém nejde o holý život, ale o důstojnost. Dějištěm příběhů je Čečna, téma platí i jinde: Je možné dosáhnout takovéto úrovně lidství bez prožití války? Kým jsme tváří v tvář těmto událostem? Jsme schopni obsáhnout vinu?</p>
+			    <p>Přicházejí. Co chtějí? Co chceme? je inscenace o vztahu k uprchlíkům. Evropa se mění v pohraničí, kde se prolínají a střetávají kultury. Na každé straně každé hranice je jiná část pravdy o světě, o nás samotných. Kde jsou hranice našeho vcítění a soucitu? Přezkoušeno v ukrajinštině s ukrajinskými herečkami speciálně pro Festival svobody.</p>
+			</div>
+		    </div>
+		</div>
+
+		<div class="performer-container">
+		    <div class="column-wrapper">
+			<div class="image-container">
+			    <h2>Bazmek Entertainment</h2>
+			    <img src="imgs/image7.png" alt="Performer Photo" class="performer-image">
+			    <div class="social-icons">
+				<div class="social-icon">
+				    <a href="https://www.facebook.com/bazmekentertainment" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+				</div>
+				<div class="social-icon">
+				    <a href="https://www.instagram.com/bazmek_entertainment/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+				</div>
+			    </div>
+			</div>
+			<div class="performer-description">
+			    <p>je nezávislé umělecké uskupení věnující se především divadlu. Věnují se podnětným tématům současného světa. Inspirují se romány, mytologií, reportážními knihami, životy neznámých celebrit, učebnicemi. Toto hledání výzev se odráží v různorodosti repertoáru zahrnujícím novou činohru, plenérové performance i audiowalk. Každý projekt začíná čerstvým pohledem, který může vždy přinést divákům nové překvapení.</p>
+			    <p>„Nyní se stávám Smrtí, ničitelem světů.” - Vědec Robert Oppenheimer po prvním nukleárním testu. Atomová energie, kterou se zabývá inscenace Uran 235, může být na jednu stranu strašákem a na stranu druhou může být technooptimistickým šidítkem: rentgen - ozařování rakovinné tkáně - jaderný odpad - Černobyl. Inscenace bude mít na Festivalu svobody předpremiéru.</p>
+			</div>
+		    </div>
+		</div>
+
+		<div class="performer-container">
+		    <div class="column-wrapper">
+			<div class="image-container">
+			    <h2>Teátr bratří Dobraničů</h2>
+			    <img src="imgs/image8.png" alt="Performer Photo" class="performer-image">
+			    <div class="social-icons">
+
+			    </div>
+			</div>
+			<div class="performer-description">
+			    <p>Loutkové divadlo, které spolehlivě uspí vaše děti. Ať je ráno, poledne či večer! Celý soubor za vámi přicestoval v jednom velkém batohu, aby odvyprávěl příběhy pro malé, větší i ty trochu dospělé. To vše v podání ukrajinsko-českého bratrského artistického dua!</p>
+			    <p>Ty nejměkčí, nejhebčí a nejroztomilejší loutky ožívají, hrají a zpívají v pohádkových příbězích v ukrajinském znění. A jestli Vás neuspí divadlo Dobranič, nezažene Vaše dítě do postele už vůbec nikdo!</p>
+			</div>
+		    </div>
+		</div>
+
+		<div class="performer-container">
+		    <div class="column-wrapper">
+			<div class="image-container">
+			    <h2>Ivano-Frankivské Nové divadlo</h2>
+			    <img src="imgs/image9.png" alt="Performer Photo" class="performer-image">
+			    <div class="social-icons">
+				<div class="social-icon">
+				    <a href="https://www.facebook.com/newtheatreif" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+				</div>
+				<div class="social-icon">
+				    <a href="https://www.instagram.com/new_theatre_if/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+				</div>
+			    </div>
+			</div>
+			<div class="performer-description">
+			    <p>Nové divadlo je profesionální divadlo, jehož estetika vychází z psychologického herectví a intelektuálního uchopení tématu. Zakladatelem a uměleckým šéfem divadla je Taras Beniuk.</p>
+			    <p>Inscenace Hamlet a Julie vyjadřuje téma Festivalu svobody. Místo děje: Japonsko, 1940. Dramatik Hadžimi Cubaki jde za přísným a konzervativním cenzorem, aby získal povolení k inscenování nové komediální hry. Nově jmenovaný cenzor se nikdy v životě nesmál a nechápe, proč Japonsko v těžké válečné době potřebuje smích. Je načase ho přesvědčit.</p>
+			</div>
+		    </div>
+		</div>
+		<div class="performer-container">
+		    <div class="column-wrapper">
+			<div class="image-container">
+			    <h2>Zakarpatské regionální divadlo</h2>
+			    <img src="imgs/image10.png" alt="Performer Photo" class="performer-image">
+			    <div class="social-icons">
+				<div class="social-icon">
+				    <a href="https://www.facebook.com/Uzhgorodmuzdramteatr" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+				</div>
+				<div class="social-icon">
+				    <a href="https://www.instagram.com/dramteatruzh/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+				</div>
+			    </div>
+			</div>
+			<div class="performer-description">
+			    <p>Zakarpatské akademické oblastní ukrajinské hudební a dramatické divadlo bratrů Šeregijových je samostatnou uměleckou institucí sídlící v Užhorodě. Diváci zde mají možnost zhlédnout mistrovská současná divadelní díla, která vznikala pod vedením talentovaných herců a jiných kulturních osobností.</p>
+			    <p>Inscenace Duchové sídla Ravenscroftů kombinuje v detektivním příběhu odehrávajícím se ve Velké Británii v první polovině 20. století mystiku, milostné konflikty, tragiku a humor, aby odvedla diváky od stresu, ve kterém se ocitli kvůli ruské agresi.</p>
+			</div>
+		    </div>
+		</div>
+
+		<div class="performer-container">
+		    <div class="column-wrapper">
+			<div class="image-container">
+			    <h2>Mariupolské divadlo</h2>
+			    <img src="imgs/image11.png" alt="Performer Photo" class="performer-image">
+			    <div class="social-icons">
+				<div class="social-icon">
+				    <a href="https://www.facebook.com/mariupoltheatre" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+				</div>
+				<div class="social-icon">
+				    <a href="https://www.instagram.com/daodt_mariupol/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+				</div>
+			    </div>
+			</div>
+			<div class="performer-description">
+			    <p>Oficiální název divadla je Doněcké akademické regionální činoherní divadlo podle regionu, ale po celou dobu své existence sídlilo ve městě Mariupol. Do 16. března 2022, kdy na něj ruské ozbrojené síly provedly letecký útok. Podle různých zdrojů se zde ve dnech před 16. březnem ukrývalo 500 až 1 200 civilistů. Mezi těmi, kteří byli v úkrytu během náletu, byli i zaměstnanci divadla. Divadlo se posléze přestěhovalo do Užhorodu.</p>
+			    <p>Autorská inscenace Křik národa je výkřik duše Ukrajinců, kterému cizinci porozumí, aniž by znali jejich jazyk. Režisér a herci divadla napsali její text sami. Odvolávají se v něm na ukrajinského básníka Vasyla Stuse, disidenta z dob Sovětského svazu, jako na symbol vzdoru vůči útlaku.</p>
+			</div>
+		    </div>
+		</div>
+
+		<div class="performer-container">
+		    <div class="column-wrapper">
+			<div class="image-container">
+			    <h2>Ivano-Frankivské činoherní divadlo</h2>
+			    <img src="imgs/image12.png" alt="Performer Photo" class="performer-image">
+			    <div class="social-icons">
+				<div class="social-icon">
+				    <a href="https://www.facebook.com/dramteatr.if" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+				</div>
+				<div class="social-icon">
+				    <a href="https://www.instagram.com/frankivsk.drama.theatre/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+				</div>
+			    </div>
+			</div>
+			<div class="performer-description">
+			    <p>Inscenace Ivano-Frankivského činoherního divadla Sladká Darusia vychází z románu ukrajinské autorky Marie Matiosové. Nejlepší sladkosti se mohou změnit v hořký jed, nejbližší člověk v nepřítele, láska v prokletí a ticho může být silnější než ta nejhlasitější slova.</p>
+			    <p>Ohromující představení s pronikavými písněmi za svitu svíček, které se třepotají jako milující srdce. Inscenace se stala v divadelním světě Ukrajiny pojmem a přiměla jej mluvit o Ivano-Frankivském divadle jako o divadle světové umělecké úrovně.</p>
+			</div>
+		    </div>
+		</div>
+
+	    </section>
+    </body>
 </html>
-
-
-
-
-
-
-
-
