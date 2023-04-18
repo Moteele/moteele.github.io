@@ -4,133 +4,172 @@
     <title>Festival Svobody</title>
     <link rel="icon" type="image/x-icon" href="favicon.png">
     <style>
-    .marginauto {
-	margin: 10px auto 20px;
-	display: block;
-	max-width:800px;
-    }
-    .centered {
-    text-align: center;
-    }
-    div {text-align: center;}
-    body {
-            font-family: Arial, sans-serif;
-            color: #000;
-            background-color: #fff;
+.performer-container {
+    display: flex;
+    margin-bottom: 50px;
+    justify-content: center;
+}
+	.performer-description {
+	    flex-grow: 1;
+	    padding-left:40px;
+	    padding-top:40px;
+	}
+	.performer-description p {
+	    text-align: justify;
+	}
+	.column-wrapper {
+	    display:flex;
+	    align-items:center;
+	    justify-content: center;
+	}
+	.image-container {
+	    width: 300px;
+	    text-align: center;
+	    margin-left: 20px;
+	}
+
+	.performer-image {
+	    width: 200px;
+	    height: 200px;
+	    object-fit: cover;
+	    border-radius: 50%;
+	}
+
+	.social-icons {
+	    display: flex;
+	    gap: 10px;
+	    justify-content: center;
+	    padding-top: 10px;
+	}
+	.social-icon {
+	    background-color: white;
+	    border-radius: 50%;
+	    padding: 5px;
+	    display: flex;
+	    justify-content: center;
+	    width: 30px;
+	    height: 30px;
+	    font-size:2em;
+	}
+	.social-icon a {
+	    color: black;
+	    text-decoration: none;
+	}
+	.social-icon a:hover i {
+	    color: #0077cc;
+	}
+	.marginauto {
+	    margin: 10px auto 20px;
+	    display: block;
+	    max-width:800px;
+	}
+	.centered {
+	    text-align: center;
+	}
+	body {
+	    font-family: Arial, sans-serif;
+	    color: #000;
+	    background-color: #fff;
 	    max-width:800px;
 	    margin: 0 auto;
-        }
-        h1 {
-            text-align: center;
-            font-size: 2rem;
-            color: #0057b8;
-            border-bottom: 2px solid #ffd700;
-            padding-bottom: 10px;
-            margin-bottom: 1.5rem;
-        }
-        h2 {
-            font-size: 1.5rem;
-            color: #0057b8;
-            margin-bottom: 1rem;
-            margin-top: 2rem;
-        }
+	}
+	h1 {
+	    text-align: center;
+	    font-size: 2rem;
+	    color: #0057b8;
+	    border-bottom: 2px solid #ffd700;
+	    padding-bottom: 10px;
+	    margin-bottom: 1.5rem;
+	}
+	h2 {
+	    font-size: 1.5rem;
+	    color: #0057b8;
+	    margin-bottom: 1rem;
+	    margin-top: 2rem;
+	}
 	table {
-    border-collapse: collapse;
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    font-size: 16px;
-    color: #333;
-}
+	    border-collapse: collapse;
+	    width: 100%;
+	    max-width: 800px;
+	    margin: 0 auto;
+	    font-size: 16px;
+	    color: #333;
+	}
 
-table th, table td {
-    border: 1px solid #ccc;
-    padding: 10px 20px;
-    text-align: left;
-}
+	table th, table td {
+	    border: 1px solid #ccc;
+	    padding: 10px 20px;
+	    text-align: left;
+	}
 
-table th {
-    background-color: #f2f2f2;
-    font-weight: bold;
-}
+	table th {
+	    background-color: #f2f2f2;
+	    font-weight: bold;
+	}
 
-table tr:nth-child(even) {
-    background-color: #f8f8f8;
-}
+	table tr:nth-child(even) {
+	    background-color: #f8f8f8;
+	}
 
-table tr:hover {
-    background-color: #e6e6e6;
-}
-                .location {
-            font-size: 0.9rem;
-            font-style: italic;
-            margin-top: 1.5rem;
-        }
-	    .facebook-btn {
-        display: inline-block;
-        background-color: #1877F2;
-        color: #fff;
-        text-decoration: none;
-        font-size: 1rem;
-        padding: 10px 20px;
-        border-radius: 5px;
-        margin: 20px auto;
-        transition: background-color 0.3s ease;
-    }
+	table tr:hover {
+	    background-color: #e6e6e6;
+	}
+	.location {
+	    font-size: 0.9rem;
+	    font-style: italic;
+	    margin-top: 1.5rem;
+	}
 
-    .facebook-btn:hover {
-        background-color: #145CB2;
-    }
-    /* Menu */
-header {
-    background-color: #fff;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
-    position: sticky; /* Add this line */
-    top: 0; /* Add this line */
-    z-index: 100; /* Add this line to ensure the header stays on top of other elements */
-}
+	/* Menu */
+	header {
+	    background-color: #fff;
+	    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+	    position: sticky; /* Add this line */
+	    top: 0; /* Add this line */
+	    z-index: 100; /* Add this line to ensure the header stays on top of other elements */
+	}
 
-.menu {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
+	.menu {
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	    padding: 20px;
+	}
 
-.menu ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
+	.menu ul {
+	    list-style-type: none;
+	    margin: 0;
+	    padding: 0;
+	    display: flex;
+	}
 
-.menu li {
-    margin: 0 20px;
-}
+	.menu li {
+	    margin: 0 20px;
+	}
 
-.menu a {
-    font-size: 16px;
-    text-decoration: none;
-    color: #333;
-    transition: color 0.3s;
-}
+	.menu a {
+	    font-size: 16px;
+	    text-decoration: none;
+	    color: #333;
+	    transition: color 0.3s;
+	}
 
-.menu a:hover {
-    color: #666;
-}
-.scrollToTop {
-    font-size: 16px;
-    border: none;
-    background: none;
-    color: #333;
-    cursor: pointer;
-    transition: color 0.3s;
-}
+	.menu a:hover {
+	    color: #666;
+	}
+	.scrollToTop {
+	    font-size: 16px;
+	    border: none;
+	    background: none;
+	    color: #333;
+	    cursor: pointer;
+	    transition: color 0.3s;
+	}
 
-.scrollToTop:hover {
-    color: #666;
-}
-    </style>
+	.scrollToTop:hover {
+	    color: #666;
+	}
+	</style>
 </head>
 <body>
     <header>
@@ -389,9 +428,221 @@ header {
 </section>
 <section id="performers">
     <h1>Особливості</h1>
-    <div>
-    <p>Найближчим часом</p>
-    </div>
+		<div class="performer-container">
+		    <div class="column-wrapper">
+			<div class="image-container">
+			    <h2>Театр Ласка</h2>
+			    <img src="imgs/image1.png" alt="Performer Photo" class="performer-image">
+			    <div class="social-icons">
+				<div class="social-icon">
+				    <a href="https://www.facebook.com/performer" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+				</div>
+				<div class="social-icon">
+				    <a href="https://www.instagram.com/performer" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+				</div>
+			    </div>
+			</div>
+			<div class="performer-description">
+			    <p>Це незалежний професійний театр, який був заснований через потребу висловити солідарність з Україною у воэнний час не лише за допомогою театру. Театр часто виступає з гастролями за межами рідної Праги, наприклад, в Україні. Драматургія театру пронизана важливістю феномену кохання на соціальному, правозахисному, екологічному та духовно-філософському рівнях, що розглядається з феміністичної перспективи.</p>
+			    <p>Вистава "Тут живуть люди" тематизує експлуатацію та об'єктивацію жінок-художниць - також і в театральному середовищі. Це співпраця театру Ласка з вісьмома українськими актрисами, які живуть у Чехії, та трьома сучасними українськими авторами. Прем'єра вистави відбудеться на фестивалі "Свободи".</p>
+			    <p>Казкові три традиційних українських казки "Колобок", "Коза Дереза", "Івасик Телесик" - це постановка, що складається з трьох традиційних українських казок. Вистава виконується українською мовою і була створена для поїздки до українських дитячих будинків у Закарпатській області. Репетирувалася з українськими акторками спеціально для Фестивалю Свободи.</p>
+			</div>
+		    </div>
+		</div>
+
+		<div class="performer-container">
+		    <div class="column-wrapper">
+			<div class="image-container">
+			    <h2>Teatro Asterlizze</h2>
+			    <img src="imgs/image3.png" alt="Performer Photo" class="performer-image">
+			    <div class="social-icons">
+				<div class="social-icon">
+				    <a href="https://www.facebook.com/AsterlizzeProduzioni" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+				</div>
+				<div class="social-icon">
+				    <a href="https://www.instagram.com/asterlizze/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+				</div>
+			    </div>
+			</div>
+			<div class="performer-description">
+			    <p>Театр з Турину досліджує теми пам'яті та ідентичності через автобіографічні історії та архівні свідчення. Він інсценізує історії, спогади, листи та щоденники, які змушують нас замислитися над світом, в якому ми живемо, і над нашим сьогоденням. Він залучає різноманітних професіоналів зі світу мистецтва та культури для створення оригінальних мистецьких рішень, інтерактивного досвіду та театральних вистав.</p>
+			    <p>"Лабіринт доктора Рая" розповідає історію вченого, який працює над етично проблематичним "чистим м'ясом", вирощеним з клітин тварин. У чому різниця між людиною і твариною? Чому нелюдським видам дозволили жити в Едемському саду, а людей вигнали з раю? Чи можемо ми коли-небудь повернутися назад?</p>
+			</div>
+		    </div>
+		</div>
+
+		<div class="performer-container">
+		    <div class="column-wrapper">
+			<div class="image-container">
+			    <h2>Ян Моцек</h2>
+			    <img src="imgs/image4.png" alt="Performer Photo" class="performer-image">
+			    <div class="social-icons">
+				<div class="social-icon">
+				    <a href="https://www.facebook.com/mocek.jan" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+				</div>
+				<div class="social-icon">
+				    <a href="https://www.instagram.com/mocekjan/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+				</div>
+			    </div>
+			</div>
+			<div class="performer-description">
+			    <p>Театральний і візуальний художник, що живе у Празі. У своїх перформансах він поєднує елементи поп-культури, політики та особистого досвіду, щоб говорити про час, в якому ми живемо. Водночас він пропонує глядачам емоційний, атмосферний та високочуттєвий досвід. Його постановки брали участь у багатьох фестивалях, серед яких Fast Forward Dresden, Use the City Košice, Submerge Digital Arts festival Bristol та 4+4 Days in Motion Prague.</p>
+			    <p>"Теперішній перфект" піднімає питання про символічну роль героїв і пам'ятників в історії та досліджує зміну культурної та політичної інтерпретації нашої історії з плином часу. Чи можна стерти наші спогади та пов'язану з ними думку, зруйнувавши пам'ятник?</p>
+			</div>
+		    </div>
+		</div>
+
+		<div class="performer-container">
+		    <div class="column-wrapper">
+			<div class="image-container">
+			    <h2>А зараз видихніть та летіть</h2>
+			    <img src="imgs/image5.png" alt="Performer Photo" class="performer-image">
+			    <div class="social-icons">
+				<div class="social-icon">
+				    <a href="https://www.facebook.com/people/Te%C4%8F-n%C3%A1dech-a-le%C5%A5/100048174624910/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+				</div>
+				<div class="social-icon">
+				    <a href="https://www.instagram.com/explore/tags/tednadechalet/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+				</div>
+			    </div>
+			</div>
+			<div class="performer-description">
+			    <p>Творчість ансамблю надихають подорожі та зустрічі з людьми - їхнім життям, історіями, звичаями, віруваннями, піснями. Драматургія постановок розділена між актуальними політичними питаннями сьогодення і традиційною культурою як живою, необхідною і незамінною частиною життя. Експедиції театру, раніше спрямовані у віддалені місця, на периферію культур і світів, останнім часом звернулися до місць, близьких до конфліктів і потрясінь різного роду.</p>
+			    <p>Вистава "І люди живуть. Абдул" - це театральне свідчення боротьби за виживання, в якій на кону стоїть не голе життя, а гідність. Місце дії - Чечня, але тема може бути застосована і в інших місцях: Чи можливо досягти такого рівня людяності, переживши війну? Хто ми є перед обличчям цих подій? Чи здатні ми стримувати почуття провини?</p>
+			    <p>"Вони йдуть. Чого вони хочуть? Чого хочемо ми?" - це вистава про стосунки з біженцями. Європа перетворюється на прикордоння, де перетинаються і зіштовхуються культури. По обидва боки кожного кордону - своя частина правди про світ, про нас самих. Де межі нашої емпатії та співчуття? Репетиція українською мовою з українськими акторками була проведена спеціально для Фестивалю Свободи.</p>
+			</div>
+		    </div>
+		</div>
+
+		<div class="performer-container">
+		    <div class="column-wrapper">
+			<div class="image-container">
+			    <h2>базмек ентертеймент</h2>
+			    <img src="imgs/image7.png" alt="Performer Photo" class="performer-image">
+			    <div class="social-icons">
+				<div class="social-icon">
+				    <a href="https://www.facebook.com/bazmekentertainment" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+				</div>
+				<div class="social-icon">
+				    <a href="https://www.instagram.com/bazmek_entertainment/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+				</div>
+			    </div>
+			</div>
+			<div class="performer-description">
+			    <p>Це незалежна мистецька група, що займається переважно театром. Вони мають справу з актуальними темами сучасного світу. Вони надихаються романами, міфологією, репортажною літературою, підручниками. Цей пошук викликів відображається у розмаїтті їхнього репертуару, який включає нову драматургію, вистави на відкритому повітрі та аудіо-візуальну творчість. Кожен проект починається зі свіжого погляду, який завжди може принести глядачам нові сюрпризи.</p>
+			    <p>"Тепер я став Смертю, руйнівником світів" - вчений Роберт Оппенгеймер після першого ядерного випробування. Атомна енергія, про яку йдеться у фільмі " "Уран 235", може бути як страшилкою, з одного боку, так і технооптимістичною ширмою, з іншого: рентгенівське випромінювання - опромінення ракових тканин - ядерні відходи - Чорнобиль. Прем'єра вистави відбудеться ексклюзивно на Фестивалі Свободи.</p>
+			</div>
+		    </div>
+		</div>
+
+		<div class="performer-container">
+		    <div class="column-wrapper">
+			<div class="image-container">
+			    <h2>Ляльковий театр Добраніч</h2>
+			    <img src="imgs/image8.png" alt="Performer Photo" class="performer-image">
+			    <div class="social-icons">
+
+			    </div>
+			</div>
+			<div class="performer-description">
+			    <p>Ляльковий театр, який надійно вкладе ваших дітей спати. Неважливо, вранці, вдень чи ввечері! Вся трупа приїхала до вас в одному великому рюкзаку, щоб розповісти історії для маленьких, великих і трохи дорослих. І все це у виконанні українсько-чеського братнього мистецького дуету!</p>
+			    <p>Найм'якші, найгнучкіші та наймиліші ляльки оживають, грають та співають у казках в українській версії. І якщо Театр братів Добранічів не вкладе вас спати, то ніхто і ніколи не вкладе у ліжечко вашу дитину!</p>
+			</div>
+		    </div>
+		</div>
+
+		<div class="performer-container">
+		    <div class="column-wrapper">
+			<div class="image-container">
+			    <h2>Івано-Франківський Новий театр</h2>
+			    <img src="imgs/image9.png" alt="Performer Photo" class="performer-image">
+			    <div class="social-icons">
+				<div class="social-icon">
+				    <a href="https://www.facebook.com/newtheatreif" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+				</div>
+				<div class="social-icon">
+				    <a href="https://www.instagram.com/new_theatre_if/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+				</div>
+			    </div>
+			</div>
+			<div class="performer-description">
+			    <p>Новий театр - професійний театр, естетика якого ґрунтується на психологічній грі та інтелектуальному осмисленні. Засновник і художній керівник театру - Тарас Бенюк.</p>
+			    <p>Вистава "Гамлет і Джульєтта" виражає тему Фестивалю Свободи. Місце дії: Японія, 1940 рік. Драматург Хадзімі Цубакі йде до суворого і консервативного цензора, щоб отримати дозвіл на постановку нової комедійної п'єси. Новопризначений цензор ніколи в житті не сміявся і не розуміє, навіщо Японії сміх у важкий час війни. Настав час переконати його.</p>
+			</div>
+		    </div>
+		</div>
+		<div class="performer-container">
+		    <div class="column-wrapper">
+			<div class="image-container">
+			    <h2>Закарпатський обласний академічний український музично-драматичний театр</h2>
+			    <img src="imgs/image10.png" alt="Performer Photo" class="performer-image">
+			    <div class="social-icons">
+				<div class="social-icon">
+				    <a href="https://www.facebook.com/Uzhgorodmuzdramteatr" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+				</div>
+				<div class="social-icon">
+				    <a href="https://www.instagram.com/dramteatruzh/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+				</div>
+			    </div>
+			</div>
+			<div class="performer-description">
+			    <p>Закарпатський обласний академічний український музично-драматичний театр імені братів Шерегіїв - незалежна мистецька інституція, що базується в Ужгороді. Тут глядачі мають можливість побачити шедеври сучасного театру, створені під керівництвом талановитих акторів та інших діячів культури.</p>
+			    <p>Вистава "Привиди маєтку Рейвенскрофт", дія якої відбувається у Великобританії в першій половині 20 століття, поєднує містику, любовні конфлікти, трагедію та гумор у детективній історії, щоб відволікти глядачів від стресу, в якому вони опинилися через російську агресію.</p>
+			</div>
+		    </div>
+		</div>
+
+		<div class="performer-container">
+		    <div class="column-wrapper">
+			<div class="image-container">
+			    <h2>Маріупольський академічний театр</h2>
+			    <img src="imgs/image11.png" alt="Performer Photo" class="performer-image">
+			    <div class="social-icons">
+				<div class="social-icon">
+				    <a href="https://www.facebook.com/mariupoltheatre" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+				</div>
+				<div class="social-icon">
+				    <a href="https://www.instagram.com/daodt_mariupol/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+				</div>
+			    </div>
+			</div>
+			<div class="performer-description">
+			    <p>Офіційна назва театру - Донецький академічний обласний драматичний театр на честь області, але протягом усього свого існування він базувався в Маріуполі. До 16 березня 2022 року, коли російські збройні сили завдали по ньому авіаудару. За різними даними, від 500 до 1200 цивільних осіб знайшли там прихисток під час російських обстрілів. Серед тих, хто переховувався під час авіаудару, були і співробітники театру. Згодом театр переїхав до Ужгорода.</p>
+			    <p>Авторська постановка "Крик нації" - це крик душі українців, який можуть зрозуміти іноземці, не знаючи їхньої мови. Режисер та актори театру самі написали її текст. У ньому вони звертаються до українського поета Василя Стуса, дисидента радянських часів, як до символу непокори проти гноблення.</p>
+			</div>
+		    </div>
+		</div>
+
+		<div class="performer-container">
+		    <div class="column-wrapper">
+			<div class="image-container">
+			    <h2>Івано-Франківський драматичний театр</h2>
+			    <img src="imgs/image12.png" alt="Performer Photo" class="performer-image">
+			    <div class="social-icons">
+				<div class="social-icon">
+				    <a href="https://www.facebook.com/dramteatr.if" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+				</div>
+				<div class="social-icon">
+				    <a href="https://www.instagram.com/frankivsk.drama.theatre/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+				</div>
+				<div class="social-icon">
+				    <a href="https://www.tiktok.com/@frankivsk_drama"
+					target="_blank" rel="noopener noreferrer"><i class="fab
+					    fa-tiktok"></i></a>
+				</div>
+			    </div>
+			</div>
+			<div class="performer-description">
+			    <p>Вистава Івано-Франківського драматичного театру "Солодка Даруся" створена за мотивами роману української письменниці Марії Матіосової. Найкращі солодощі можуть перетворитися на гірку отруту, найближча людина - на ворога, кохання - на прокляття, а мовчання - на найгучніші слова.</p>
+			    <p>Приголомшлива вистава з пронизливими піснями при свічках, які тріпочуть, як люблячі серця. Вистава стала відомимою театральному світі України і дала привід говорити про Івано-Франківський театр як про театр світового рівня.</p>
+			</div>
+		    </div>
+		</div>
+
+	    </section>
+    </body>
+</html>
+
 </section>
 </body>
 </html>
