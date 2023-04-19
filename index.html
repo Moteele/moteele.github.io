@@ -1,177 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="cs">
     <head>
 	<title>Festival Svobody</title>
 	<link rel="icon" type="image/x-icon" href="favicon.png">
 	<script src="https://kit.fontawesome.com/f72108d5f2.js" crossorigin="anonymous"></script>
-
-	<style>
-.performer-container {
-    display: flex;
-    margin-bottom: 50px;
-    justify-content: center;
-}
-	.performer-description {
-	    flex-grow: 1;
-	    padding-left:40px;
-	    padding-top:40px;
-	}
-	.performer-description p {
-	    text-align: justify;
-	}
-	.column-wrapper {
-	    display:flex;
-	    align-items:center;
-	    justify-content: center;
-	}
-	.image-container {
-	    width: 300px;
-	    text-align: center;
-	    margin-left: 20px;
-	}
-
-	.performer-image {
-	    width: 200px;
-	    height: 200px;
-	    object-fit: cover;
-	    border-radius: 50%;
-	}
-
-	.social-icons {
-	    display: flex;
-	    gap: 10px;
-	    justify-content: center;
-	    padding-top: 10px;
-	}
-	.social-icon {
-	    background-color: white;
-	    border-radius: 50%;
-	    padding: 5px;
-	    display: flex;
-	    justify-content: center;
-	    width: 30px;
-	    height: 30px;
-	    font-size:2em;
-	}
-	.social-icon a {
-	    color: black;
-	    text-decoration: none;
-	} 
-	.social-icon a:hover i {
-	    color: #0077cc;
-	}
-	.marginauto {
-	    margin: 10px auto 20px;
-	    display: block;
-	    max-width:800px;
-	}
-	.centered {
-	    text-align: center;
-	}
-	body {
-	    font-family: Arial, sans-serif;
-	    color: #000;
-	    background-color: #fff;
-	    max-width:800px;
-	    margin: 0 auto;
-	}
-	h1 {
-	    text-align: center;
-	    font-size: 2rem;
-	    color: #0057b8;
-	    border-bottom: 2px solid #ffd700;
-	    padding-bottom: 10px;
-	    margin-bottom: 1.5rem;
-	}
-	h2 {
-	    font-size: 1.5rem;
-	    color: #0057b8;
-	    margin-bottom: 1rem;
-	    margin-top: 2rem;
-	}
-	table {
-	    border-collapse: collapse;
-	    width: 100%;
-	    max-width: 800px;
-	    margin: 0 auto;
-	    font-size: 16px;
-	    color: #333;
-	}
-
-	table th, table td {
-	    border: 1px solid #ccc;
-	    padding: 10px 20px;
-	    text-align: left;
-	}
-
-	table th {
-	    background-color: #f2f2f2;
-	    font-weight: bold;
-	}
-
-	table tr:nth-child(even) {
-	    background-color: #f8f8f8;
-	}
-
-	table tr:hover {
-	    background-color: #e6e6e6;
-	}
-	.location {
-	    font-size: 0.9rem;
-	    font-style: italic;
-	    margin-top: 1.5rem;
-	}
-
-	/* Menu */
-	header {
-	    background-color: #fff;
-	    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
-	    position: sticky; /* Add this line */
-	    top: 0; /* Add this line */
-	    z-index: 100; /* Add this line to ensure the header stays on top of other elements */
-	}
-
-	.menu {
-	    display: flex;
-	    justify-content: center;
-	    align-items: center;
-	    padding: 20px;
-	}
-
-	.menu ul {
-	    list-style-type: none;
-	    margin: 0;
-	    padding: 0;
-	    display: flex;
-	}
-
-	.menu li {
-	    margin: 0 20px;
-	}
-
-	.menu a {
-	    font-size: 16px;
-	    text-decoration: none;
-	    color: #333;
-	    transition: color 0.3s;
-	}
-
-	.menu a:hover {
-	    color: #666;
-	}
-	.scrollToTop {
-	    font-size: 16px;
-	    border: none;
-	    background: none;
-	    color: #333;
-	    cursor: pointer;
-	    transition: color 0.3s;
-	}
-
-	.scrollToTop:hover {
-	    color: #666;
-	}
-	</style>
+	<link rel="stylesheet" href="styles.css" type="text/css">
     </head>
     <body>
 	<header>
@@ -190,7 +23,8 @@
 	    </nav>
 	</header>
 	<div>
-	    <img id='poster' src="poster_cz.jpg" class="marginauto" style="cursor:zoom-in;">
+	    <img id='poster' src="poster_cz.jpg" class="marginauto" style="cursor:zoom-in;"
+				  alt="poster">
 	</div>
 
 	<script>
@@ -210,8 +44,8 @@
 		window.scrollTo({ top: 0, behavior: "smooth" });
 	    });
 	</script>
+	<section id="about">
 	<div style="text-align:justify">
-	    <section id="about">
 		<p style="text-align:center">S klidem k lidem! 💙💛</p>
 		<p>Ukrajinský Užhorod coby křižovatka kultury i kultur 🎭🎼🤝</p>
 		<p>Čtvrtý dubnový víkend (21. – 23. 4.) se historické město u hranic se Slovenskem stane centrem Mezinárodního festivalu svobody ✌🏻</p>
@@ -431,7 +265,6 @@
 		<p class="location">📍Malá scéna: Zakarpatské akademické regionální loutkové divadlo</p>
 		<p class="location">📍Venkovní scéna: Stage na náměstí před Zakarpatským akademickým regionálním loutkovým divadlem</p>
 		<p>Každý večer na Vás čeká lasershow na venkovní scéně a videomapping na budovu Loutkového divadla.</p>
-		</div>
 	    </section>
 	    <section id="performers">
 		<h1>Vystupující</h1>
@@ -631,6 +464,11 @@
 				</div>
 				<div class="social-icon">
 				    <a href="https://www.instagram.com/frankivsk.drama.theatre/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+				</div>
+				<div class="social-icon">
+				    <a href="https://www.tiktok.com/@frankivsk_drama"
+					target="_blank" rel="noopener noreferrer"><i class="fab
+					    fa-tiktok"></i></a>
 				</div>
 			    </div>
 			</div>
